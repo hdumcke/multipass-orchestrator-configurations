@@ -1,0 +1,8 @@
+ubuntu-desktop:
+  cpu: 2
+  mem: 2G
+  disk: 5G
+  image: focal
+  cloud_init: ./cloud-config.yaml
+  git_repo: https://github.com/hdumcke/multipass-orchestrator-configurations.git
+  build_script: ./multipass-orchestrator-configurations/ubuntu-desktop/build.sh

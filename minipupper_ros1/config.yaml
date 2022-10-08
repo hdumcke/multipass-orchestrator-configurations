@@ -1,0 +1,16 @@
+mini-pupper-ros1:
+  cpu: 2
+  mem: 2G
+  disk: 5G
+  image: focal
+  cloud_init: ./cloud-config.yaml
+  git_repo: https://github.com/hdumcke/mini_pupper_testig.git
+  build_script: ./mini_pupper_testig/bsp_stanford_web_controller/setup_testing.sh
+ros1:
+  cpu: 2
+  mem: 2G
+  disk: 5G
+  image: focal
+  cloud_init: ./cloud-config.yaml
+  git_repo: https://github.com/hdumcke/mini_pupper_testig.git
+  build_script: ./mini_pupper_testig/bsp_stanford_web_controller/setup_pc.sh
