@@ -4,5 +4,7 @@ ubuntu-desktop:
   disk: 5G
   image: focal
   cloud_init: ./cloud-config.yaml
-  git_repo: https://github.com/hdumcke/multipass-orchestrator-configurations.git
-  build_script: ./multipass-orchestrator-configurations/ubuntu-desktop/build.sh
+  git_repos:
+    - https://github.com/hdumcke/multipass-orchestrator-configurations.git
+  build_scripts:
+    - ./multipass-orchestrator-configurations/ubuntu-desktop/build.sh
