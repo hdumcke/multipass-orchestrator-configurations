@@ -11,7 +11,7 @@ mini-pupper-ros1:
 ros1:
   cpu: 2
   mem: 2G
-  disk: 5G
+  disk: 10G
   image: focal
   cloud_init: ./cloud-config.yaml
   git_repos:
