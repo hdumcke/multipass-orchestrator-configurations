@@ -1,7 +1,7 @@
 armctoolchain:
-  cpu: 2
+  cpu: 4
   mem: 2G
-  disk: 5G
+  disk: 15G
   image: jammy
   cloud_init: ./cloud-config.yaml
   git_repos:
