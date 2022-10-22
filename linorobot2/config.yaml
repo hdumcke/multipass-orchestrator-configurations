@@ -1,0 +1,13 @@
+linorobot2:
+  cpu: 4
+  mem: 16G
+  disk: 20G
+  image: jammy
+  cloud_init: ./cloud-config.yaml
+  git_repos:
+    - https://github.com/hdumcke/multipass-orchestrator-configurations.git
+    - https://github.com/Tiryoh/ros2_setup_scripts_ubuntu.git
+  build_scripts:
+    - ./multipass-orchestrator-configurations/ubuntu-desktop/build.sh
+    - ./ros2_setup_scripts_ubuntu/run.sh
+    - ./multipass-orchestrator-configurations/linorobot2/build.sh
