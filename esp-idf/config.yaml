@@ -2,7 +2,7 @@ esp-idf:
   cpu: 2
   mem: 4G
   disk: 15G
-  image: focal
+  image: jammy
   cloud_init: ./cloud-config.yaml
   git_repos:
     - https://github.com/hdumcke/multipass-orchestrator-configurations.git
