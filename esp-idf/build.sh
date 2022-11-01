@@ -9,6 +9,7 @@ cd ~/esp/esp-idf
 ./install.sh esp32s3
 ./install.sh all
 echo ". ~/esp/esp-idf/export.sh" >> ~/.bashrc
+echo "export ESPPORT=/dev/ttyUSB0" >> ~/.bashrc
 cd ~
 git clone --recursive https://github.com/espressif/openocd-esp32.git
 cd ~/openocd-esp32
