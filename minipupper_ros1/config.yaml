@@ -5,12 +5,14 @@ mini-pupper-ros1:
   image: focal
   cloud_init: ./cloud-config.yaml
   git_repos:
+    - https://github.com/hdumcke/multipass-orchestrator-configurations.git
     - https://github.com/hdumcke/mini_pupper_testig.git
   build_scripts:
     - ./mini_pupper_testig/bsp_ros1/setup_testing.sh
+    - ./multipass-orchestrator-configurations/minipupper_ros1/setup_roshostname_minipupper.sh
 ros1:
   cpu: 4
-  mem: 16G
+  mem: 4G
   disk: 10G
   image: focal
   cloud_init: ./cloud-config.yaml
@@ -20,3 +22,4 @@ ros1:
   build_scripts:
     - ./multipass-orchestrator-configurations/ubuntu-desktop/build.sh
     - ./mini_pupper_testig/bsp_ros1/setup_pc.sh
+    - ./multipass-orchestrator-configurations/minipupper_ros1/setup_roshostname_pc.sh
