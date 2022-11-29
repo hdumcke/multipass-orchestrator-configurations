@@ -2,7 +2,7 @@ mini-pupper-ros2:
   cpu: 2
   mem: 2G
   disk: 5G
-  image: focal
+  image: jammy
   cloud_init: ./cloud-config.yaml
   git_repos:
     - https://github.com/hdumcke/mini_pupper_testig.git
@@ -12,7 +12,7 @@ ros2:
   cpu: 4
   mem: 16G
   disk: 10G
-  image: focal
+  image: jammy
   cloud_init: ./cloud-config.yaml
   git_repos:
     - https://github.com/hdumcke/multipass-orchestrator-configurations.git
