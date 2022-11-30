@@ -7,6 +7,6 @@ mini-pupper-stanford:
   git_repos:
     - https://github.com/hdumcke/mini_pupper_testig.git
   build_scripts:
-    - ./mini_pupper_testig/bsp_stanford_web_controller/setup_testing.sh
+    - ./mini_pupper_testig/v1_bsp_stanford_web_controller/setup_testing.sh
   run_scripts:
     - ./StanfordQuadruped/tests/run_all_tests.sh
