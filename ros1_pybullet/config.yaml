@@ -7,4 +7,5 @@ ros1-pybullet:
   git_repos:
     - https://github.com/hdumcke/multipass-orchestrator-configurations.git
   build_scripts:
+    - ./multipass-orchestrator-configurations/ubuntu-desktop/build.sh
     - ./multipass-orchestrator-configurations/ros1_pybullet/setup.sh

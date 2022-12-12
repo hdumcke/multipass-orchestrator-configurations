@@ -46,11 +46,16 @@ source /usr/lib/python3/dist-packages/catkin_tools/verbs/catkin_shell_verbs.bash
 rosdep update
 
 mkdir -p ~/catkin_ws/src
+sudo apt-get install -y ros-${ROS_DISTRO}-cv-bridge
 cd ~/catkin_ws/src
 git clone https://github.com/ros-pybullet/ros_pybullet_interface.git
 sed -i "s/^cd .*/cd \/home\/ubuntu\/catkin_ws\/src/" ros_pybullet_interface/install.sh
 sed -i "s/apt install/apt install -y/" ros_pybullet_interface/install.sh
 sed -i "/workspace/a cd \/home\/ubuntu\/catkin_ws/" ros_pybullet_interface/install.sh
+chmod +x ros_pybullet_interface/install.sh
+cd ~/catkin_ws
+catkin init
+./src/ros_pybullet_interface/install.sh
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 echo "setup.sh finished at $(date)"
