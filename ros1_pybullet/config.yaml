@@ -1,0 +1,10 @@
+ros1-pybullet:
+  cpu: 4
+  mem: 8G
+  disk: 15G
+  image: focal
+  cloud_init: ./cloud-config.yaml
+  git_repos:
+    - https://github.com/hdumcke/multipass-orchestrator-configurations.git
+  build_scripts:
+    - ./multipass-orchestrator-configurations/ros1_pybullet/setup.sh
