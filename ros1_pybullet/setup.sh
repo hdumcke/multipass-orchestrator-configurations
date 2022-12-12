@@ -47,6 +47,7 @@ rosdep update
 
 mkdir -p ~/catkin_ws/src
 sudo apt-get install -y ros-${ROS_DISTRO}-cv-bridge
+sudo apt-get install -y ros-${ROS_DISTRO}-trac-ik-python
 cd ~/catkin_ws/src
 git clone https://github.com/ros-pybullet/ros_pybullet_interface.git
 sed -i "s/^cd .*/cd \/home\/ubuntu\/catkin_ws\/src/" ros_pybullet_interface/install.sh
