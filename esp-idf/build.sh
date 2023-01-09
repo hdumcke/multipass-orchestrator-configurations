@@ -25,17 +25,5 @@ sudo make install
 # install sigrok
 sudo apt-get install -y sigrok
 
-### Install pip
-cd /tmp
-wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
-
-# install Python Modules for testing
-sudo apt install -y python-is-python3
-sudo pip install pyserial
-
 # enable uart3 to communuicate with ESP32
 echo "dtoverlay=uart3" | sudo tee -a /boot/firmware/config.txt
-
-# for tests involving matplotlib
-sudo apt-get install -y python3-tk
