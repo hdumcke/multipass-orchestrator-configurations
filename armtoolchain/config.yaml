@@ -1,4 +1,4 @@
-armctoolchain:
+arctoolchaim:
   cpu: 4
   mem: 2G
   disk: 15G
@@ -8,4 +8,4 @@ armctoolchain:
     - https://github.com/hdumcke/multipass-orchestrator-configurations.git
     - https://github.com/hdumcke/linorobot2_hoverboard.git
   build_scripts:
-    - ./multipass-orchestrator-configurations/armctoolchain/build.sh
+    - ./multipass-orchestrator-configurations/arctoolchaim/build.sh
