@@ -5,10 +5,12 @@ wget -O  ~/arm-none-eabi.tar.xz https://developer.arm.com/-/media/Files/download
 cd ~
 echo $(pwd)
 echo $(ls -l /usr/bin/tar)
+echo $(ls -l ~/)
+sleep 2
 echo $(ls -l ~/arm-none-eabi.tar.xz)
-echo $(/usr/bin/tar --help)
 echo before
 /usr/bin/tar -v -xf ~/arm-none-eabi.tar.xz
+echo after
 cd ~/linorobot2_hoverboard/Hoverboard-Firmware-Hack-Gen2/HoverBoardGigaDevice
 make GCC_PATH=~/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin
 mkdir ~/slave
