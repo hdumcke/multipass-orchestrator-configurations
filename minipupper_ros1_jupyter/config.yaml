@@ -5,6 +5,6 @@ mini-pupper-ros1:
   image: focal
   cloud_init: ./cloud-config.yaml
   git_repos:
-    - https://github.com/hdumcke/mini_pupper_testig.git
+    - https://github.com/mangdangroboticsclub/mini_pupper.git
   build_scripts:
-    - ./mini_pupper_testig/v1_ros1_jupyter/setup_testing.sh
+    - ./mini_pupper/v1_ros1_jupyter/setup_testing.sh
