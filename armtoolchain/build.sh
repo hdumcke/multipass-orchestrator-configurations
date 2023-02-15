@@ -15,9 +15,10 @@ done
 /usr/bin/tar -xf ~/arm-none-eabi.tar.xz -C ~
 cd ~/linorobot2_hoverboard/Hoverboard-Firmware-Hack-Gen2/HoverBoardGigaDevice
 make GCC_PATH=~/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin
-mkdir ~/slave
-cp build/firmware.bin ~/slave/
+mkdir  ~/slave
+cp build/firmware.* ~/slave/
 sed -i "s/\/\/#define MASTER/#define MASTER/" Inc/config.h
 sed -i "s/#define SLAVE/\/\/#define SLAVE/" Inc/config.h
+make GCC_PATH=~/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin
 mkdir ~/master
-cp build/firmware.bin ~/master/
+cp build/firmware.* ~/master/
