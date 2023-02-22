@@ -1,4 +1,4 @@
-mp_v2_esp_build:
+mp-v2-esp-build:
   cpu: 2
   mem: 4G
   disk: 15G
