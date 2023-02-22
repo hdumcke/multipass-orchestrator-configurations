@@ -10,6 +10,10 @@ cd ~/esp/esp-idf
 ./install.sh esp32s3
 ./install.sh all
 echo ". ~/esp/esp-idf/export.sh" >> ~/.bashrc
-echo "export ESPPORT=/dev/ttyUSB0" >> ~/.bashrc
 
-bash ~/multipass-orchestrator-configurations/mp_v2_esp_build/compile-target.sh
+source ~/esp/esp-idf/export.sh
+cd ~
+git clone -b mini_pupper_2 https://github.com/mangdangroboticsclub/mini_pupper_bsp.git
+cd ~/mini_pupper_bsp/esp32
+idf.py set-target esp32s3
+idf.py build
