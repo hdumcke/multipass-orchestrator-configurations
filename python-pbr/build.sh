@@ -24,19 +24,84 @@ git commit -m 'first commit'
 cd ~
 pip install ~/test-module
 python3 ~/test-module/test/test.py
+pip show test_module
 pip uninstall -y test_module
 
+echo ================
+echo 0.1.0
 # create git tag
 cd ~/test-module
 git tag v0.1.0
 cd ~
 pip install ~/test-module
 python3 ~/test-module/test/test.py
+pip show test_module
 pip uninstall -y test_module
 
-# Next test will fail since git tag is > then version in setup.cdg
-# create git tag
+echo ================
+echo 0.2.0
+# create next git tag
 cd ~/test-module
+sed -i -e "s/World/World\!/g" ~/test-module/test_module/test.py
+git add -A
+git commit -m 'second commit'
 git tag v0.2.0
 cd ~
 pip install ~/test-module
+python3 ~/test-module/test/test.py
+pip show test_module
+pip uninstall -y test_module
+
+echo ================
+echo 0.2.0 2nd
+# create next git tag
+cd ~/test-module
+sed -i -e "s/World/World\!/g" ~/test-module/test_module/test.py
+git add -A
+git commit -m '3rd commit'
+cd ~
+pip install ~/test-module
+python3 ~/test-module/test/test.py
+pip show test_module
+pip uninstall -y test_module
+
+echo ================
+echo 0.3
+# create next git tag
+cd ~/test-module
+sed -i -e "s/World/World\!/g" ~/test-module/test_module/test.py
+git add -A
+git commit -m '4th commit'
+git tag v0.3
+cd ~
+pip install ~/test-module
+python3 ~/test-module/test/test.py
+pip show test_module
+pip uninstall -y test_module
+
+echo ================
+echo 0.3 2nd
+# create next git tag
+cd ~/test-module
+sed -i -e "s/World/World\!/g" ~/test-module/test_module/test.py
+git add -A
+git commit -m '5th commit'
+cd ~
+pip install ~/test-module
+python3 ~/test-module/test/test.py
+pip show test_module
+pip uninstall -y test_module
+
+echo ================
+echo 0.4
+# create next git tag
+cd ~/test-module
+sed -i -e "s/World/World\!/g" ~/test-module/test_module/test.py
+git add -A
+git commit -m '6th commit'
+git tag v0.4
+cd ~
+pip install ~/test-module
+python3 ~/test-module/test/test.py
+pip show test_module
+pip uninstall -y test_module
