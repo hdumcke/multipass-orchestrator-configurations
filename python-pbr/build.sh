@@ -24,7 +24,8 @@ git commit -m 'first commit'
 cd ~
 pip install ~/test-module
 python3 ~/test-module/test/test.py
-pip show test_module
+pip show test-module
+pip freeze | grep test-module
 pip uninstall -y test_module
 
 echo ================
@@ -35,7 +36,8 @@ git tag v0.1.0
 cd ~
 pip install ~/test-module
 python3 ~/test-module/test/test.py
-pip show test_module
+pip show test-module
+pip freeze | grep test-module
 pip uninstall -y test_module
 
 echo ================
@@ -49,7 +51,8 @@ git tag v0.2.0
 cd ~
 pip install ~/test-module
 python3 ~/test-module/test/test.py
-pip show test_module
+pip show test-module
+pip freeze | grep test-module
 pip uninstall -y test_module
 
 echo ================
@@ -62,7 +65,8 @@ git commit -m '3rd commit'
 cd ~
 pip install ~/test-module
 python3 ~/test-module/test/test.py
-pip show test_module
+pip show test-module
+pip freeze | grep test-module
 pip uninstall -y test_module
 
 echo ================
@@ -76,7 +80,8 @@ git tag v0.3
 cd ~
 pip install ~/test-module
 python3 ~/test-module/test/test.py
-pip show test_module
+pip show test-module
+pip freeze | grep test-module
 pip uninstall -y test_module
 
 echo ================
@@ -89,7 +94,8 @@ git commit -m '5th commit'
 cd ~
 pip install ~/test-module
 python3 ~/test-module/test/test.py
-pip show test_module
+pip show test-module
+pip freeze | grep test-module
 pip uninstall -y test_module
 
 echo ================
@@ -103,7 +109,8 @@ git tag v0.4
 cd ~
 pip install ~/test-module
 python3 ~/test-module/test/test.py
-pip show test_module
+pip show test-module
+pip freeze | grep test-module
 pip uninstall -y test_module
 
 
@@ -116,5 +123,6 @@ git commit -m '7th commit'
 PBR_VERSION=$(~/multipass-orchestrator-configurations/python-pbr/get-version.sh) pip install ~/test-module
 cd ~
 python3 ~/test-module/test/test.py
-pip show test_module
+pip show test-module
+pip freeze | grep test-module
 pip uninstall -y test_module
