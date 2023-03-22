@@ -113,13 +113,23 @@ pip show test-module
 pip freeze | grep test-module
 pip uninstall -y test_module
 
-
 echo ================
 echo our own versoning sheme
 cd ~/test-module
 sed -i -e "s/World/World\!/g" ~/test-module/test_module/test.py
 git add -A
 git commit -m '7th commit'
+PBR_VERSION=$(~/multipass-orchestrator-configurations/python-pbr/get-version.sh) pip install ~/test-module
+cd ~
+python3 ~/test-module/test/test.py
+pip show test-module
+pip freeze | grep test-module
+pip uninstall -y test_module
+
+echo ================
+echo our own versoning sheme, make dirty
+cd ~/test-module
+sed -i -e "s/World/World\!/g" ~/test-module/test_module/test.py
 PBR_VERSION=$(~/multipass-orchestrator-configurations/python-pbr/get-version.sh) pip install ~/test-module
 cd ~
 python3 ~/test-module/test/test.py
