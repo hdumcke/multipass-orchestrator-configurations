@@ -1,0 +1,10 @@
+mp-v1-ros2:
+  cpu: 2
+  mem: 2G
+  disk: 15G
+  image: jammy
+  cloud_init: ./cloud-config.yaml
+  git_repos:
+    - "-b mini_pupper_ros2 https://github.com/hdumcke/StanfordQuadruped.git"
+  build_scripts:
+    - ./StanfordQuadruped/setup_testing.sh v1
