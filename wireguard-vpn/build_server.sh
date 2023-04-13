@@ -24,7 +24,6 @@ sudo chmod 600 /etc/wireguard/{privatekey,wg0.conf}
 
 cat > ~/add-peer.sh << EOF
 #!/bin/bash
-PEERPUBKEY=
 sudo wg set wg0 peer PEERPUBKEY allowed-ips 10.0.0.2,10.0.0.100
 EOF
 

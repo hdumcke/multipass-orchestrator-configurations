@@ -14,21 +14,31 @@ PrivateKey = $(sudo cat /etc/wireguard/privatekey)
 Address = 10.0.0.2/24
 
 [Peer]
-PublicKey = $SERVERKEY
+PublicKey = SERVERKEY
 AllowedIPs = 10.0.0.0/24
-Endpoint = $SERVERIP.1:51820
+Endpoint = SERVERIP:51820
 EOF
 
 sudo cp /tmp/wg0.conf /etc/wireguard/
 
 sudo chmod 600 /etc/wireguard/{privatekey,wg0.conf}
 
-cat > ~/connect.sh << EOF
-#!/bin/bash
+cat > ~/readme-vpn << EOF
+Connect to the server and do
+sudo wg
 
-export SERVERKEY=
-export SERVERIP=
+This will show you the publik key of the server
+
+On the client edit /etc/wireguard/wg0.conf
+Replace SERVERKEY and SERVERIP
+
+Get the client public key with this command on the client
+sudo cat /etc/wireguard/privatekey
+
+On the server edit ~/add-peer.sh abd replace PEERPUBKEY with the publick key of the client. Then run:
+~/add-peer.sh
+
+Finally establish a VPN connection by running the following command on the client:
+
 sudo wg-quick up wg0
 EOF
-
-chmod +x ~/connect.sh
