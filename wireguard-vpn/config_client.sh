@@ -1,8 +1,8 @@
-wireguard-vpn_client:
+wireguard-vpn-client:
   cpu: 2
   mem: 2G
   disk: 5G
-  image: focal
+  image: jammy
   cloud_init: ./cloud-config.yaml
   git_repos:
     - https://github.com/hdumcke/multipass-orchestrator-configurations.git
