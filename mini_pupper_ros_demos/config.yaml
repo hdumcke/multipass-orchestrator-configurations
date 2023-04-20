@@ -1,0 +1,13 @@
+mini-pupper-ros-demos:
+  cpu: 4
+  mem: 16G
+  disk: 15G
+  image: jammy
+  cloud_init: ./cloud-config.yaml
+  git_repos:
+    - https://github.com/hdumcke/multipass-orchestrator-configurations.git
+    - https://github.com/hdumcke/mini_pupper_ros_demos.git
+  build_scripts:
+    - ./multipass-orchestrator-configurations/ubuntu-desktop/build.sh
+    - ./mini_pupper_ros_demos/setup.sh
+    - ./multipass-orchestrator-configurations/wireguard-vpn/build_client.sh
