@@ -1,4 +1,4 @@
-mp-v2-ros-bsp:
+minipupper-ros-bsp:
   cpu: 2
   mem: 2G
   disk: 15G
@@ -7,4 +7,4 @@ mp-v2-ros-bsp:
   git_repos:
     - https://github.com/mangdangroboticsclub/mini_pupper_ros_bsp.git
   build_scripts:
-    - "./mini_pupper_ros_bsp/setup.sh v2"
+    - "./mini_pupper_ros_bsp/setup.sh v1"
