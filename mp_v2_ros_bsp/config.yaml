@@ -7,4 +7,5 @@ mp-v2-ros-bsp:
   git_repos:
     - https://github.com/mangdangroboticsclub/mini_pupper_ros_bsp.git
   build_scripts:
+    - "sed -i '/reboot/d' ./mini_pupper_ros_bsp/setup.sh"
     - "./mini_pupper_ros_bsp/setup.sh v2"
