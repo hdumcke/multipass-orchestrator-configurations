@@ -14,12 +14,9 @@ python3 -m pip install -e .
 cd ~
 git clone https://github.com/bernhard-42/three-cad-viewer.git
 
-exit 0
-
 cd ~
-curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.shA
+curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
-sudo apt update
 sudo apt-get install -y nodejs
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
