@@ -1,12 +1,16 @@
 #!/bin/bash
 
-sudo apt install -y python-is-python3 libgl1
+sudo apt install -y python-is-python3 libgl1 qtbase5-dev qt5-qmake
 
 ### Install pip
 cd /tmp
 wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 
+pip install git+https://github.com/jdegenstein/jmwright-CQ-Editor
+pip install --pre cadquery
+
+cd ~
 git clone https://github.com/gumyr/build123d.git
 cd build123d
 python3 -m pip install -e .
