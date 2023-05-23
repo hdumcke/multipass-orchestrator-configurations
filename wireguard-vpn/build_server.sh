@@ -24,10 +24,12 @@ sudo chmod 600 /etc/wireguard/{privatekey,wg0.conf}
 
 cat > ~/add-peer.sh << EOF
 #!/bin/bash
-sudo wg set wg0 peer PEERPUBKEY allowed-ips 10.0.0.2,10.0.0.100
+sudo wg set wg0 peer PEERPUBKEY allowed-ips 10.0.0.0/24
 EOF
 
 chmod +x ~/add-peer.sh
 
 sudo systemctl enable wg-quick@wg0.service
 sudo systemctl start wg-quick@wg0.service
+
+echo "export CYCLONEDDS_URI=file:///home/ubuntu/multipass-orchestrator-configurations/wireguard-vpn/cyclone_dds_config_server.xml" >> ~/.bashrc

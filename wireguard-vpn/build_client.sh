@@ -33,7 +33,7 @@ On the client edit /etc/wireguard/wg0.conf
 Replace SERVERKEY and SERVERIP
 
 Get the client public key with this command on the client
-sudo cat /etc/wireguard/privatekey
+sudo cat /etc/wireguard/publickey
 
 On the server edit ~/add-peer.sh abd replace PEERPUBKEY with the publick key of the client. Then run:
 ~/add-peer.sh
@@ -42,3 +42,5 @@ Finally establish a VPN connection by running the following command on the clien
 
 sudo wg-quick up wg0
 EOF
+
+echo "export CYCLONEDDS_URI=file:///home/ubuntu/multipass-orchestrator-configurations/wireguard-vpn/cyclone_dds_config_client.xml" >> ~/.bashrc
