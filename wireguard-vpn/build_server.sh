@@ -32,4 +32,4 @@ chmod +x ~/add-peer.sh
 sudo systemctl enable wg-quick@wg0.service
 sudo systemctl start wg-quick@wg0.service
 
-echo "export CYCLONEDDS_URI=file:///home/ubuntu/multipass-orchestrator-configurations/wireguard-vpn/cyclone_dds_config.xml" >> ~/.bashrc
+echo "export CYCLONEDDS_URI=file:///home/ubuntu/multipass-orchestrator-configurations/wireguard-vpn/cyclone_dds_config_server.xml" >> ~/.bashrc
