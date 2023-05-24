@@ -43,4 +43,4 @@ Finally establish a VPN connection by running the following command on the clien
 sudo wg-quick up wg0
 EOF
 
-echo "export CYCLONEDDS_URI=file:///home/ubuntu/multipass-orchestrator-configurations/wireguard-vpn/cyclone_dds_config_client.xml" >> ~/.bashrc
+echo "export CYCLONEDDS_URI=file:///home/ubuntu/multipass-orchestrator-configurations/wireguard-vpn/cyclone_dds_config.xml" >> ~/.bashrc
