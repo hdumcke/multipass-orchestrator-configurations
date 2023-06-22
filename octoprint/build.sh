@@ -11,4 +11,4 @@ cd ~/OctoPrint
 pip install -U pyobjc
 pip install .
 
-octoprint serve
+#octoprint serve
