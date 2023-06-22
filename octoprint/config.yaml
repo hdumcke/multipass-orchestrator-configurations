@@ -1,0 +1,11 @@
+octoprint:
+  cpu: 2
+  mem: 4G
+  disk: 15G
+  image: jammy
+  cloud_init: ./cloud-config.yaml
+  git_repos:
+    - https://github.com/hdumcke/multipass-orchestrator-configurations.git
+    - https://github.com/OctoPrint/OctoPrint.git
+  build_scripts:
+    - ./multipass-orchestrator-configurations/octoprint/build.sh
