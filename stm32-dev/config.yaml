@@ -1,4 +1,4 @@
-stm32_dev:
+stm32-dev:
   cpu: 4
   mem: 2G
   disk: 15G
@@ -8,5 +8,6 @@ stm32_dev:
     - https://github.com/hdumcke/multipass-orchestrator-configurations.git
     - https://github.com/libopencm3/libopencm3.git
     - https://github.com/libopencm3/libopencm3-miniblink.git
+    - https://github.com/libopencm3/libopencm3-examples
   build_scripts:
     - ./multipass-orchestrator-configurations/stm32-dev/build.sh

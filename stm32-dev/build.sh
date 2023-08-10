@@ -13,4 +13,18 @@ echo -n "."
 tmp=$(ps aux | grep wget | grep arm-none-eabi.tar.xz | wc -l)
 done
 /usr/bin/tar -xf ~/arm-none-eabi.tar.xz -C ~
-export GCC_PATH=~/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin
+sudo apt update
+sudo apt -y upgrade	
+sudo apt install -y libncurses5-dev openocd
+echo "export PATH=~/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin:$PATH" >> ~/.bashrc
+export PATH=~/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin:$PATH
+cd ~/libopencm3
+make TARGETS='stm32/f4'
+cd ~/libopencm3-miniblink
+make
+cd ~/libopencm3-examples
+cd examples/stm32/f4/nucleo-f411re/blink/
+export OPENCM3_DIR=~/libopencm3
+make
+make flash
+
