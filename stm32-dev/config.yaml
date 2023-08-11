@@ -2,7 +2,7 @@ stm32-dev:
   cpu: 4
   mem: 2G
   disk: 15G
-  image: jammy
+  image: default
   cloud_init: ./cloud-config.yaml
   git_repos:
     - https://github.com/hdumcke/multipass-orchestrator-configurations.git

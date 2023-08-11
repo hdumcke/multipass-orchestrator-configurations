@@ -16,6 +16,9 @@ done
 sudo apt update
 sudo apt -y upgrade	
 sudo apt install -y libncurses5-dev openocd
+cd /tmp
+wget https://github.com/stlink-org/stlink/releases/download/v1.7.0/stlink_1.7.0-1_amd64.deb
+sudo dpkg -i stlink_1.7.0-1_amd64.deb
 echo "export PATH=~/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin:$PATH" >> ~/.bashrc
 export PATH=~/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin:$PATH
 cd ~/libopencm3
