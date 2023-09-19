@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "greetings"
+version = "0.0.1"
+authors = [
+  { name="TeamCdR2024" },
+]
+description = "Example of a Python module"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+greetings = "greetings.hello_world:main"
+
+[project.urls]
+"Homepage" = "https://github.com/hdumcke/multipass-orchestrator-configurations.git"

@@ -1,0 +1,16 @@
+CC=gcc -g
+INC_DIR = ../lib
+LDLIBS=../lib/libhello.so -lm
+#CFLAGS=-Wall -I$(INC_DIR)
+CFLAGS=-fPIC -O0 -I$(INC_DIR)
+
+all: test
+test: test.o
+test.o: test.c
+
+clean:
+	rm -f test test.o
+run: test
+	./test
+debug: test
+	gdb ./test
