@@ -1,0 +1,22 @@
+CC=gcc -g
+INC_DIR = ../lib
+LDLIBS=../lib/libhello.so -lm -lgcov --coverage
+CFLAGS=-fPIC -O0 -I$(INC_DIR) -fprofile-arcs -ftest-coverage
+
+all: test
+test: test.o
+test.o: test.c
+
+clean:
+	rm -rf test test.o *.gc* gcovr-report
+run: test
+	./test
+debug: test
+	gdb ./test
+
+coverage: ## Run code coverage
+	gcov test.c
+
+gcovr-report: coverage ## Generate gcovr report
+	mkdir gcovr-report
+	gcovr --root . --html --html-details --output gcovr-report/coverage.html

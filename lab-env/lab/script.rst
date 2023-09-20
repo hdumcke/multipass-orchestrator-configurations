@@ -180,14 +180,62 @@ make
 make run
 make debug
 
+Python bindings
+---------------
+
+mkdir -p ~/c-environment/python-bindings/src/hello/
+cd ~/c-environment/python-bindings
+touch LICENSE
+touch README.rst
+touch requirements.txt
+touch src/hello/__init__.py
+cp ~/multipass-orchestrator-configurations/lab-env/lab/pyproject.toml_lib pyproject.toml
+cp ~/multipass-orchestrator-configurations/lab-env/lab/hello.py src/hello/
+mkdir tests
+cp ~/multipass-orchestrator-configurations/lab-env/lab/test_hello.py tests/
+
+cd ~/c-environment/python-bindings/src/hello/
+vi hello.py # explain content
+python hello.py
+
+# mention https://www.swig.org
+
+cd ~/c-environment/python-bindings
+pip install -e .
+pytest
+
 Coverage test
 -------------
 
 pip install gcovr
 
-TODO
+cd ~/c-environment/lib
+cp ~/multipass-orchestrator-configurations/lab-env/lab/Makefile_gcov Makefile
+make clean; make
+nm libhello.so
 
-Python bindings
----------------
+cd ~/c-environment/test
+cp ~/multipass-orchestrator-configurations/lab-env/lab/Makefile_test_gcov Makefile
+make clean; make
+ls
+make run
+ls
+make gcovr-report
 
+# on PC
+scp -r ubuntu@192.168.64.101:c-environment/test/gcovr-report .
+open gcovr-report/coverage.html
+
+cd ~/c-environment/lib
+ls
+make clean; make
+cd ../python-bindings/
+pytest
+cd -
+make gcovr-report
+
+# on PC
+rm -rf gcovr-report
+scp -r ubuntu@192.168.64.101:c-environment/lib/gcovr-report .
+open gcovr-report/coverage.html
 

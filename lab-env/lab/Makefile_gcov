@@ -1,0 +1,33 @@
+# Makefile template for a shared library in C
+# https://www.topbug.net/blog/2019/10/28/makefile-template-for-a-shared-library-in-c-with-explanations/
+
+CC = gcc  # C compiler
+CFLAGS = -fPIC -O0 -g  -fprofile-arcs -ftest-coverage
+LDFLAGS = -shared -lgcov --coverage
+RM = rm -rf   # rm command
+TARGET_LIB = libhello.so  # target lib
+
+SRCS = $(wildcard *.c)  # source files
+OBJS = $(SRCS:.c=.o)
+
+.PHONY: all
+all: ${TARGET_LIB}
+
+$(TARGET_LIB): $(OBJS)
+	$(CC) ${LDFLAGS} -o $@ $^
+
+$(SRCS:.c=.d):%.d:%.c
+	$(CC) $(CFLAGS) -MM $< >$@
+
+include $(SRCS:.c=.d)
+
+coverage: ## Run code coverage
+	gcov hello.c
+
+gcovr-report: coverage ## Generate gcovr report
+	mkdir gcovr-report
+	gcovr --root . --html --html-details --output gcovr-report/coverage.html
+
+.PHONY: clean
+clean:
+	-${RM} ${TARGET_LIB} ${OBJS} $(SRCS:.c=.d) *.gc* gcovr-report
