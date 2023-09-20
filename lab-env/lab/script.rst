@@ -22,7 +22,7 @@ jinja2.__file__
 venv
 ----
 
-sudo apt install python3-venv
+sudo apt -y install python3-venv
 
 python -mvenv lab
 ls lab
@@ -97,8 +97,8 @@ vi src/greetings/hello_world.py
 flake8
 ------
 
-pip install flake8
-flake8 .
+pip install pycodestyle
+pycodestyle .
 
 pytest
 ------
@@ -122,6 +122,7 @@ coverage report -m
 coverage html
 
 # on PC
+cd /tmp
 scp -r ubuntu@192.168.64.101:greetings/htmlcov .
 open htmlcov/index.html
 
@@ -153,6 +154,15 @@ vi source/conf.py
 extensions = ['sphinx_rtd_theme']
 html_theme = 'sphinx_rtd_theme'
 
+vi source/index.rst # add the following lines
+
+This is my doc with some math
+
+.. math::
+
+   \frac{ \sum_{t=0}^{N}f(t,k) }{N}
+
+
 C environment
 =============
 
@@ -161,7 +171,7 @@ build lib
 
 mkdir -p ~/c-environment/lib
 cd ~/c-environment/lib
-cp ~/multipass-orchestrator-configurations/lab-env/lab/hello.* .
+cp ~/multipass-orchestrator-configurations/lab-env/lab/hello.[ch] .
 cp ~/multipass-orchestrator-configurations/lab-env/lab/Makefile .
 
 make
@@ -223,6 +233,7 @@ ls
 make gcovr-report
 
 # on PC
+cd /tmp
 scp -r ubuntu@192.168.64.101:c-environment/test/gcovr-report .
 open gcovr-report/coverage.html
 
@@ -237,5 +248,22 @@ make gcovr-report
 # on PC
 rm -rf gcovr-report
 scp -r ubuntu@192.168.64.101:c-environment/lib/gcovr-report .
+open gcovr-report/coverage.html
+
+$scp -r 08-librobot ubuntu@192.168.64.103:cd ~
+
+cd ~/08-librobot/01-python-binding/
+pip install -e .
+cd ~/08-librobot/00-librobot/
+make clean
+make
+pip install numoy
+make run-test
+make gcovr-report
+
+# on PC
+cd /tmp
+rm -rf gcovr-report
+scp -r ubuntu@192.168.64.101:08-librobot/00-librobot/gcovr-report .
 open gcovr-report/coverage.html
 
