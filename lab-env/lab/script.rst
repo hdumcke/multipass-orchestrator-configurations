@@ -214,8 +214,36 @@ cd ~/c-environment/python-bindings
 pip install -e .
 pytest
 
+clang-format
+------------
+
+sudo apt install -y clang-format 
+
+cd ~/c-environment/lib
+git init
+make clean
+git add -A
+git commit -m 'clean repo'
+
+git config --global user.email hdumcke@mrlysys.com
+git config --global user.name "Horst Dumcke"
+git commit -m 'clean repo'
+clang-format hello.c
+clang-format -i hello.[ch]
+
+lint
+----
+
+sudo apt -y install splint
+splint hello.c
+
+sudo apt -y install cppcheck
+cppcheck hello.c
+
+# mention LLVM and clang
+
 Coverage test
--------------
+------------
 
 pip install gcovr
 
