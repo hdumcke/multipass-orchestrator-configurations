@@ -3,7 +3,7 @@
 sudo apt update
 sudo apt -y upgrade
 
-sudo apt install -y dnsmasq iptables-persistent
+DEBIAN_FRONTEND=noninteractive sudo apt install -y dnsmasq iptables-persistent
 
 cat ~/multipass-orchestrator-configurations/lab-env/keys.txt >>  ~/.ssh/authorized_keys
 sudo cp ~/multipass-orchestrator-configurations/wifi-router/dnsmasq.conf /etc
