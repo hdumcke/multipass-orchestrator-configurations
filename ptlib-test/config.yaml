@@ -1,0 +1,10 @@
+ptlib:
+  cpu: 2
+  mem: 4G
+  disk: 5G
+  image: jammy
+  git_repos:
+    - https://github.com/hdumcke/multipass-orchestrator-configurations.git
+  build_scripts:
+    - bash -c "cat ~/multipass-orchestrator-configurations/TeamCdR2024/keys.txt >>  ~/.ssh/authorized_keys"
+    - ./multipass-orchestrator-configurations/ptlib-test/build.sh
