@@ -3,7 +3,7 @@
 sudo apt update
 sudo apt -y upgrade
 
-sudo apt -y install python3-venv build-essential gdb clang-format cmake python3-dev nginx libirrlicht1.8 libirrlicht-dev
+sudo apt -y install python3-venv build-essential gdb clang-format cmake python3-dev nginx
 
 python3 -mvenv dev
 source dev/bin/activate
