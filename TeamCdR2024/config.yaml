@@ -1,7 +1,7 @@
 dev:
   cpu: 2
   mem: 4G
-  disk: 5G
+  disk: 10G
   image: jammy
   git_repos:
     - https://github.com/hdumcke/multipass-orchestrator-configurations.git
