@@ -16,11 +16,13 @@ sudo cp ~/multipass-orchestrator-configurations/ota-server-rpi/iptables.rules /e
 
 sudo systemctl stop systemd-resolved
 sudo systemctl disable systemd-resolved
+sudo systemctl mask systemd-resolved
+
 sudo rm /etc/resolv.conf
 echo "nameserver 127.0.0.1" | sudo tee /etc/resolv.conf
 
 sudo sed -i "s/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/" /etc/sysctl.conf
 
-echo "192.168.100.254 ota.marsattacks.com" | sudo tee /etc/resolv.conf
+echo "192.168.100.254 ota.marsattacks.com" | sudo tee -a /etc/hosts
 
 sudo reboot

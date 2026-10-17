@@ -109,7 +109,7 @@ packages:
 - git
 
 runcmd:
-- [ "git clone https://github.com/hdumcke/multipass-orchestrator-configurations.git" ]
+- [ git, clone, "https://github.com/hdumcke/multipass-orchestrator-configurations.git" ]
 - [ "/home/%s/multipass-orchestrator-configurations/ota-server-rpi/build.sh 2>> /home/%s/.setup_err.log >> /home/%s/.setup_out.log" ]
 apt:
   preserve_sources_list: true
